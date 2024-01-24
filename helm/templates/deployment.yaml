@@ -5,6 +5,7 @@ metadata:
   labels:
     app: {{ .Values.label }}
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: {{ .Values.label }}
@@ -17,6 +18,4 @@ spec:
         - name: {{ .Values.deployment.image.name }}
           image: "{{ .Values.deployment.image.name }}:{{ .Values.deployment.image.version }}"
           ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+            - containerPort: 8888
