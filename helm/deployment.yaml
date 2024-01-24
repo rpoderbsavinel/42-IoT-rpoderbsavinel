@@ -1,18 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: golang-deployment
-  labels:
-    app: golang
+  name: wil-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: golang
+      app: wil
   template:
     metadata:
       labels:
-        app: golang
+        app: wil
     spec:
       containers:
         - name: wil42/playground
