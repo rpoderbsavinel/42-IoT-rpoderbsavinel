@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.deployment.name }}
+  name: golang-deployment
   labels:
-    app: {{ .Values.label }}
+    app: golang
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.label }}
+      app: golang
   template:
     metadata:
       labels:
-        app: {{ .Values.label }}
+        app: golang
     spec:
       containers:
-        - name: {{ .Values.deployment.image.name }}
-          image: "{{ .Values.deployment.image.name }}:{{ .Values.deployment.image.version }}"
+        - name: wil42/playground
+          image: wil42/playground:v1
           ports:
             - containerPort: 8888
