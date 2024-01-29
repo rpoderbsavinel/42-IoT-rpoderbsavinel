@@ -1,18 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: main-ingress
   annotations:
     ingress.kubernetes.io/rewrite-target: /
+  labels:
+    app.kubernetes.io/instance: p3
+  name: main-ingress
+  namespace: dev
 spec:
   rules:
-    - http:
+    - http: null
       paths:
-        - path: "/"
-          pathType: Prefix
-          backend:
+        - backend:
             service:
               name: wil42-playground
               port:
                 number: 7171
+          path: /
+          pathType: Prefix
 
