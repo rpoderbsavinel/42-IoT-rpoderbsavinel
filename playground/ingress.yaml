@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: main-ingress
+  name: p3-ingress
   namespace: dev
   annotations:
     traefik.ingress.kubernetes.io/redirect-entry-point: https
@@ -13,7 +13,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: wil42-playground
+                name: p3-service
                 port:
                   number: 8888
 

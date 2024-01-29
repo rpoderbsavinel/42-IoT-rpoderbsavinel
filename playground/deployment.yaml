@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wil42-playground
+  name: p3-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: wil42-playground
+      app: p3
   template:
     metadata:
       labels:
-        app: wil42-playground
+        app: p3
     spec:
       containers:
       - image: wil42/playground:v2
