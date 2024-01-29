@@ -15,5 +15,5 @@ spec:
               service:
                 name: wil42-playground
                 port:
-                  number: 7171
+                  number: 8888
 
